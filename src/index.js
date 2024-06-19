@@ -1,5 +1,7 @@
 import app from './app.js';
-import { PORT } from './config.js';
+// import { PORT } from './config.js';
+import 'dotenv/config';
+// import .env
 
-app.listen(PORT || process.env.PORT);
-console.log('Server on port ', PORT || process.env.PORT);
+app.listen(process.env.PORT);
+console.log('Server on port ', process.env.PORT);
