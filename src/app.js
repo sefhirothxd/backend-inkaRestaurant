@@ -5,6 +5,7 @@ import cors from 'cors';
 import userRoutes from './routes/users.routes.js';
 import productoRoutes from './routes/productos.routes.js';
 import authRoutes from './routes/auth.routes.js';
+import paymentRoutes from './routes/payment.routes.js';
 
 const app = express();
 app.use(morgan('dev'));
@@ -17,6 +18,7 @@ app.get('/', (req, res) => res.json({ message: 'Api en funcionamiento' }));
 app.use(userRoutes);
 app.use('/api', productoRoutes);
 app.use('/api', authRoutes);
+app.use('/api', paymentRoutes);
 
 //error Handler
 app.use((err, req, res, next) => {
