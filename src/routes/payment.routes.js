@@ -1,9 +1,13 @@
 import { Router } from 'express';
-import { createSession } from '../controllers/payment.controller.js';
+import {
+	createSession,
+	getCheckoutSession,
+} from '../controllers/payment.controller.js';
 
 const router = Router();
 
-router.get('/create-checkout-session', createSession);
+router.post('/create-checkout-session', createSession);
+router.get('/checkout-session/:sessionId', getCheckoutSession);
 router.get('/succes', (req, res) => {
 	res.json({ message: 'succes' });
 });
