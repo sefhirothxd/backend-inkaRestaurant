@@ -1,8 +1,7 @@
 import Stripe from 'stripe';
+import dotenv from 'dotenv';
 
-const stripe = new Stripe(
-	'sk_test_51Mlf6FI6fSTiR42sXBiH2AQqGjAO36roirjdDrURbof40yFgJUiICfyHhkKrnTFEqtOy00ePySyCooMYZNvjCLn100YsNBg4tX'
-);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export const createSession = async (req, res) => {
 	const items = req.body.items;
