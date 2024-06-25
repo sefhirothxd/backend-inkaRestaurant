@@ -30,8 +30,8 @@ export const createSession = async (req, res) => {
 			allowed_countries: ['US'],
 		},
 		success_url:
-			'http://localhost:3000/carrito/completado?session_id={CHECKOUT_SESSION_ID}',
-		cancel_url: 'http://localhost:3000/cancel',
+			'https://inka-restaurant.vercel.app/carrito/completado?session_id={CHECKOUT_SESSION_ID}',
+		cancel_url: 'https://inka-restaurant.vercel.app/cancel',
 	});
 
 	return res.json(session.url);
